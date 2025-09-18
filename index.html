@@ -29,7 +29,6 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				overflow: hidden;
 				position: relative;
 			}
 
@@ -41,6 +40,41 @@
 				background: #f0bf00;
 				border-radius: 50% 0 50% 0;
 				animation: fall 10s linear infinite;
+			}
+
+			/* Sparkles scintillants */
+			.sparkle {
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				background: #f0bf00;
+				border-radius: 50%;
+				animation: sparkle 3s ease-in-out infinite;
+				box-shadow: 0 0 10px #f0bf00;
+			}
+
+			.sparkle::before {
+				content: "";
+				position: absolute;
+				width: 2px;
+				height: 2px;
+				background: #fff;
+				border-radius: 50%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			@keyframes sparkle {
+				0%,
+				100% {
+					opacity: 0;
+					transform: scale(0.5);
+				}
+				50% {
+					opacity: 1;
+					transform: scale(1.2);
+				}
 			}
 
 			@keyframes fall {
@@ -76,8 +110,8 @@
 			}
 
 			.logo-svg {
-				width: 100px;
-				height: 100px;
+				width: 150px;
+				height: 150px;
 				filter: drop-shadow(0 4px 8px rgba(240, 191, 0, 0.3));
 			}
 
@@ -189,8 +223,8 @@
 				}
 
 				.logo-svg {
-					width: 80px;
-					height: 80px;
+					width: 120px;
+					height: 120px;
 				}
 
 				.title {
@@ -238,6 +272,56 @@
 			style="left: 90%; animation-delay: 7s"
 		></div>
 
+		<!-- Sparkles scintillants -->
+		<div
+			class="sparkle"
+			style="top: 15%; left: 15%; animation-delay: 0s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 25%; left: 85%; animation-delay: 1s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 35%; left: 25%; animation-delay: 2s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 45%; left: 75%; animation-delay: 0.5s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 55%; left: 35%; animation-delay: 1.5s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 65%; left: 65%; animation-delay: 2.5s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 75%; left: 45%; animation-delay: 0.8s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 85%; left: 55%; animation-delay: 1.8s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 20%; left: 50%; animation-delay: 2.2s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 40%; left: 10%; animation-delay: 1.2s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 60%; left: 90%; animation-delay: 0.3s"
+		></div>
+		<div
+			class="sparkle"
+			style="top: 80%; left: 20%; animation-delay: 2.8s"
+		></div>
+
 		<!-- Éléments décoratifs dorés -->
 		<div class="flower"></div>
 		<div class="flower"></div>
@@ -267,9 +351,7 @@
 				votre propre monde intérieur pourra commencer.
 			</p>
 			<p class="construction-text">
-				Merci pour votre patience et votre confiance<span
-					class="loading-dots"
-				></span>
+				Merci pour votre patience et votre confiance.
 			</p>
 			<div class="contact-info">
 				<p>
@@ -295,8 +377,27 @@
 				}, 15000);
 			}
 
+			// Créer de nouveaux sparkles dynamiquement
+			function createSparkle() {
+				const sparkle = document.createElement("div");
+				sparkle.className = "sparkle";
+				sparkle.style.left = Math.random() * 100 + "%";
+				sparkle.style.top = Math.random() * 100 + "%";
+				sparkle.style.animationDelay = Math.random() * 3 + "s";
+				sparkle.style.animationDuration = Math.random() * 2 + 2 + "s";
+				document.body.appendChild(sparkle);
+
+				// Supprimer l'élément après l'animation
+				setTimeout(() => {
+					sparkle.remove();
+				}, 5000);
+			}
+
 			// Créer de nouveaux pétales toutes les 2 secondes
 			setInterval(createCherryBlossom, 2000);
+
+			// Créer de nouveaux sparkles toutes les 800ms
+			setInterval(createSparkle, 800);
 		</script>
 	</body>
 </html>
