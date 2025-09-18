@@ -4,6 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Umi - En Construction</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Quicksand:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
 		<style>
 			* {
 				margin: 0;
@@ -12,12 +18,12 @@
 			}
 
 			body {
-				font-family: "Arial", sans-serif;
+				font-family: "Quicksand", sans-serif;
 				background: linear-gradient(
 					135deg,
-					#ff9a9e 0%,
-					#fecfef 50%,
-					#fecfef 100%
+					#d8fff9 0%,
+					#ffe6c3 50%,
+					#f5d2d2 100%
 				);
 				min-height: 100vh;
 				display: flex;
@@ -27,12 +33,12 @@
 				position: relative;
 			}
 
-			/* Cerisiers en fleurs animés */
+			/* Pétales dorés animés */
 			.cherry-blossom {
 				position: absolute;
 				width: 4px;
 				height: 4px;
-				background: #ffb6c1;
+				background: #f0bf00;
 				border-radius: 50% 0 50% 0;
 				animation: fall 10s linear infinite;
 			}
@@ -50,32 +56,35 @@
 
 			.container {
 				text-align: center;
-				background: rgba(255, 255, 255, 0.9);
+				background: rgba(255, 255, 255, 0.95);
 				padding: 60px 40px;
 				border-radius: 20px;
-				box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
+				box-shadow: 0 20px 40px rgba(240, 191, 0, 0.2);
 				backdrop-filter: blur(10px);
-				border: 2px solid rgba(255, 192, 203, 0.3);
+				border: 2px solid rgba(240, 191, 0, 0.3);
 				max-width: 600px;
 				width: 90%;
 				position: relative;
 				z-index: 10;
 			}
 
-			.logo {
-				font-size: 4rem;
-				font-weight: bold;
-				background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-				margin-bottom: 20px;
-				text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
+			.logo-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 30px;
+			}
+
+			.logo-svg {
+				width: 100px;
+				height: 100px;
+				filter: drop-shadow(0 4px 8px rgba(240, 191, 0, 0.3));
 			}
 
 			.title {
+				font-family: "Raleway", sans-serif;
 				font-size: 2.5rem;
-				color: #d63384;
+				color: #71325f;
 				margin-bottom: 20px;
 				font-weight: 300;
 				letter-spacing: 2px;
@@ -83,14 +92,14 @@
 
 			.subtitle {
 				font-size: 1.2rem;
-				color: #e91e63;
+				color: #71325f;
 				margin-bottom: 30px;
-				opacity: 0.8;
+				opacity: 0.9;
 			}
 
 			.construction-text {
 				font-size: 1.1rem;
-				color: #ad1457;
+				color: #71325f;
 				line-height: 1.6;
 				margin-bottom: 40px;
 			}
@@ -125,7 +134,7 @@
 				position: absolute;
 				width: 30px;
 				height: 30px;
-				background: radial-gradient(circle, #ffb6c1 0%, #ff69b4 100%);
+				background: radial-gradient(circle, #f0bf00 0%, #c9961a 100%);
 				border-radius: 50% 0 50% 0;
 				animation: float 6s ease-in-out infinite;
 			}
@@ -165,11 +174,12 @@
 			}
 
 			.contact-info {
+				font-family: "Lora", serif;
 				font-size: 0.9rem;
-				color: #c2185b;
+				color: #007a99;
 				margin-top: 30px;
 				padding-top: 20px;
-				border-top: 1px solid rgba(255, 182, 193, 0.3);
+				border-top: 1px solid rgba(240, 191, 0, 0.3);
 			}
 
 			@media (max-width: 768px) {
@@ -178,8 +188,9 @@
 					margin: 20px;
 				}
 
-				.logo {
-					font-size: 3rem;
+				.logo-svg {
+					width: 80px;
+					height: 80px;
 				}
 
 				.title {
@@ -189,7 +200,7 @@
 		</style>
 	</head>
 	<body>
-		<!-- Pétales de cerisier animés -->
+		<!-- Pétales dorés animés -->
 		<div
 			class="cherry-blossom"
 			style="left: 10%; animation-delay: 0s"
@@ -227,31 +238,49 @@
 			style="left: 90%; animation-delay: 7s"
 		></div>
 
-		<!-- Fleurs décoratives -->
+		<!-- Éléments décoratifs dorés -->
 		<div class="flower"></div>
 		<div class="flower"></div>
 		<div class="flower"></div>
 		<div class="flower"></div>
 
 		<div class="container">
-			<div class="logo">🌸 Umi 🌸</div>
+			<div class="logo-container">
+				<img src="logo.svg" alt="UMI Logo" class="logo-svg" />
+			</div>
 			<h1 class="title">En Construction</h1>
-			<p class="subtitle">Quelque chose de magnifique arrive bientôt</p>
-			<p class="construction-text">
-				Nous travaillons dur pour créer une expérience exceptionnelle
-				pour vous. Notre équipe met tout en œuvre pour finaliser ce
-				projet avec amour et attention aux détails.
+			<p class="subtitle">
+				✨ Un nouvel espace de sérénité est en préparation.
 			</p>
 			<p class="construction-text">
-				Merci pour votre patience<span class="loading-dots"></span>
+				Chez UMI, nous croyons qu'un bureau peut devenir un refuge : un
+				lieu où travailler rime avec calme, inspiration, équilibre et
+				productivité.
+			</p>
+			<p class="construction-text">
+				Nous mettons la dernière touche à nos box
+				bien-être/productivité, mêlant papeterie et petites attentions
+				pour vous aider à créer votre bulle de concentration.
+			</p>
+			<p class="construction-text">
+				Notre site ouvrira très bientôt ses portes… et votre voyage dans
+				votre propre monde intérieur pourra commencer.
+			</p>
+			<p class="construction-text">
+				Merci pour votre patience et votre confiance<span
+					class="loading-dots"
+				></span>
 			</p>
 			<div class="contact-info">
-				<p>Pour toute question, n'hésitez pas à nous contacter</p>
+				<p>
+					En attendant, suivez-nous sur Instagram :
+					<strong>@umi-box</strong>
+				</p>
 			</div>
 		</div>
 
 		<script>
-			// Créer plus de pétales de cerisier dynamiquement
+			// Créer plus de pétales dorés dynamiquement
 			function createCherryBlossom() {
 				const blossom = document.createElement("div");
 				blossom.className = "cherry-blossom";
