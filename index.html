@@ -34,23 +34,27 @@
 
 			/* Pétales dorés animés */
 			.cherry-blossom {
-				position: absolute;
+				position: fixed;
 				width: 4px;
 				height: 4px;
 				background: #f0bf00;
 				border-radius: 50% 0 50% 0;
 				animation: fall 10s linear infinite;
+				pointer-events: none;
+				z-index: 1;
 			}
 
 			/* Sparkles scintillants */
 			.sparkle {
-				position: absolute;
+				position: fixed;
 				width: 6px;
 				height: 6px;
 				background: #f0bf00;
 				border-radius: 50%;
 				animation: sparkle 3s ease-in-out infinite;
 				box-shadow: 0 0 10px #f0bf00;
+				pointer-events: none;
+				z-index: 1;
 			}
 
 			.sparkle::before {
@@ -110,8 +114,8 @@
 			}
 
 			.logo-svg {
-				width: 150px;
-				height: 150px;
+				width: 180px;
+				height: 180px;
 				filter: drop-shadow(0 4px 8px rgba(240, 191, 0, 0.3));
 			}
 
@@ -165,12 +169,14 @@
 			}
 
 			.flower {
-				position: absolute;
+				position: fixed;
 				width: 30px;
 				height: 30px;
 				background: radial-gradient(circle, #f0bf00 0%, #c9961a 100%);
 				border-radius: 50% 0 50% 0;
 				animation: float 6s ease-in-out infinite;
+				pointer-events: none;
+				z-index: 1;
 			}
 
 			.flower:nth-child(1) {
@@ -223,8 +229,8 @@
 				}
 
 				.logo-svg {
-					width: 120px;
-					height: 120px;
+					width: 140px;
+					height: 140px;
 				}
 
 				.title {
@@ -356,7 +362,7 @@
 			<div class="contact-info">
 				<p>
 					En attendant, suivez-nous sur Instagram :
-					<strong>@umi-box</strong>
+					<strong>@umi-boxpers</strong>
 				</p>
 			</div>
 		</div>
