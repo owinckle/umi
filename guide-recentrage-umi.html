@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow" />
+	<title>Le Guide de Recentrage UMI — Téléchargement</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Quicksand:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap"
+		rel="stylesheet" />
+
+	<script async src="https://plausible.io/js/pa-QYfDeTM0fi3VLkFNxOoc6.js"></script>
+	<script>
+		window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+		plausible.init()
+	</script>
+
+	<style>
+		:root {
+			--bg-cream: #fff9ee;
+			--text: #000000;
+			--plum: #71325f;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: "Quicksand", sans-serif;
+			background: var(--bg-cream);
+			color: var(--text);
+			min-height: 100vh;
+			line-height: 1.65;
+		}
+
+		.page {
+			max-width: 1120px;
+			margin: 0 auto;
+			padding: 48px 28px 72px;
+		}
+
+		.page-header {
+			text-align: center;
+			margin-bottom: 48px;
+		}
+
+		.page-title {
+			font-family: "Raleway", sans-serif;
+			font-size: 60px;
+			font-weight: 500;
+			color: var(--plum);
+			letter-spacing: 0.02em;
+			text-shadow: 0 2px 8px rgba(113, 50, 95, 0.12), 0 1px 2px rgba(113, 50, 95, 0.08);
+		}
+
+		.layout {
+			display: grid;
+			grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+			gap: clamp(32px, 5vw, 56px);
+			align-items: center;
+		}
+
+		.copy {
+			max-width: 36rem;
+			padding-right: clamp(0px, 2vw, 24px);
+		}
+
+		.copy h2 {
+			font-family: "Lora", serif;
+			font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+			font-style: italic;
+			font-weight: 600;
+			color: var(--text);
+			line-height: 1.45;
+			margin-bottom: 22px;
+		}
+
+		.copy p {
+			font-size: 0.98rem;
+			margin-bottom: 18px;
+			color: var(--text);
+		}
+
+		.cta-block {
+			font-family: "Lora", serif;
+			text-align: left;
+			margin-top: 36px;
+			margin-bottom: 28px;
+		}
+
+		.cta-block p {
+			font-size: clamp(1rem, 1.8vw, 1.12rem);
+			line-height: 1.55;
+			max-width: 34ch;
+			margin: 0;
+			color: var(--plum);
+		}
+
+		.download-wrap {
+			margin: 0;
+		}
+
+		.download-btn {
+			display: inline-block;
+			padding: 14px 32px;
+			border: none;
+			border-radius: 999px;
+			background: var(--plum);
+			color: #fff;
+			font-family: "Quicksand", sans-serif;
+			font-size: 0.95rem;
+			font-weight: 600;
+			text-decoration: none;
+			cursor: pointer;
+			white-space: nowrap;
+			transition: background 0.2s ease, transform 0.15s ease;
+		}
+
+		.download-btn:hover {
+			background: #5f2a50;
+		}
+
+		.download-btn:active {
+			transform: scale(0.98);
+		}
+
+		.contact-note {
+			font-size: 0.9rem;
+			color: rgba(0, 0, 0, 0.65);
+			margin-top: 32px;
+			margin-bottom: 0;
+			max-width: 34ch;
+		}
+
+		.contact-note a {
+			color: var(--plum);
+			font-weight: 600;
+			text-decoration: none;
+		}
+
+		.contact-note a:hover {
+			text-decoration: underline;
+		}
+
+		.visual {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			min-height: 0;
+		}
+
+		.visual::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: min(58%, 220px);
+			pointer-events: none;
+			z-index: 1;
+			background: linear-gradient(to right,
+					rgba(255, 249, 238, 0) 0%,
+					rgba(255, 249, 238, 0.55) 45%,
+					var(--bg-cream) 100%);
+		}
+
+		.book-wrap {
+			position: relative;
+			z-index: 0;
+			max-width: min(440px, 94vw);
+		}
+
+		.book-wrap img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		@media (max-width: 880px) {
+			.layout {
+				grid-template-columns: 1fr;
+				align-items: start;
+			}
+
+			.copy {
+				max-width: none;
+				padding-right: 0;
+			}
+
+			.visual {
+				order: -1;
+				margin-bottom: 8px;
+			}
+		}
+
+		@media (max-width: 640px) {
+			.page-title {
+				font-size: clamp(1.75rem, 7vw, 60px);
+			}
+		}
+
+		@media (max-width: 480px) {
+			.page {
+				padding: 32px 18px 56px;
+			}
+
+			.download-btn {
+				width: 100%;
+				max-width: 320px;
+				text-align: center;
+				white-space: normal;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="page">
+		<header class="page-header">
+			<h1 class="page-title">Le Guide de Recentrage UMI</h1>
+		</header>
+
+		<div class="layout">
+			<div class="copy">
+				<h2>Merci! Voici votre guide.</h2>
+
+				<p>
+					Vous trouverez ci-dessous le Guide de Recentrage UMI au format PDF.
+				</p>
+
+				<p>
+					Cliquez sur le bouton pour l’enregistrer sur votre appareil. Vous pourrez
+					ensuite le lire hors connexion, à votre rythme.
+				</p>
+
+				<div class="cta-block">
+					<p>Conservez ce lien pour y revenir quand vous le souhaitez.</p>
+				</div>
+
+				<div class="download-wrap">
+					<a class="download-btn" href="GDRUMI.pdf" download="Guide-de-Recentrage-UMI.pdf" id="download-link">
+						Télécharger le guide (PDF)
+					</a>
+				</div>
+
+				<p class="contact-note">
+					Une question ? Retrouvez-nous sur Instagram :
+					<a href="https://www.instagram.com/umiboxco/" target="_blank" rel="noopener noreferrer">@umiboxco</a>
+				</p>
+			</div>
+
+			<div class="visual">
+				<div class="book-wrap">
+					<img src="guide.png" alt="Couverture du Guide de Recentrage UMI" width="779" height="952" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.getElementById("download-link").addEventListener("click", function () {
+			if (window.plausible) plausible("Guide PDF Download");
+		});
+	</script>
+</body>
+
+</html>
