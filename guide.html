@@ -64,8 +64,6 @@
 			letter-spacing: 0.02em;
 			line-height: 1.15;
 			text-shadow: 0 2px 8px rgba(113, 50, 95, 0.12), 0 1px 2px rgba(113, 50, 95, 0.08);
-			overflow-wrap: break-word;
-			hyphens: auto;
 		}
 
 		.main-grid {
@@ -89,8 +87,6 @@
 			font-weight: 600;
 			color: var(--text);
 			line-height: 1.45;
-			overflow-wrap: break-word;
-			hyphens: auto;
 		}
 
 		.copy h2 {
@@ -177,26 +173,25 @@
 
 		.bottom-section {
 			grid-column: 1 / -1;
-			margin-top: clamp(20px, 4vw, 36px);
+			margin-top: 0;
 			text-align: center;
 		}
 
 		.benefits-list {
 			list-style: none;
-			margin: 0 auto clamp(16px, 3vw, 24px);
+			margin: clamp(12px, 2.5vw, 20px) 0 0;
 			padding: 0;
 			width: 100%;
-			max-width: 28rem;
 		}
 
 		.benefits-list li {
 			display: flex;
 			align-items: flex-start;
-			justify-content: center;
+			justify-content: flex-start;
 			gap: 0.45em;
 			margin-bottom: 10px;
 			line-height: 1.45;
-			text-align: center;
+			text-align: left;
 			color: var(--plum);
 			font-weight: 600;
 		}
@@ -223,7 +218,7 @@
 			color: var(--plum);
 			line-height: 1.5;
 			max-width: 42rem;
-			margin: 0 auto 12px;
+			margin: 0 auto 8px;
 		}
 
 		.lead-form {
@@ -234,6 +229,12 @@
 
 		.guide-ml-form .ml-form-successBody.row-success.is-visible {
 			display: block !important;
+		}
+
+		@media (min-width: 881px) {
+			.bottom-section {
+				margin-top: -15px;
+			}
 		}
 
 		@media (max-width: 880px) {
@@ -250,10 +251,6 @@
 
 			.book-wrap {
 				max-width: min(380px, 82vw);
-			}
-
-			.bottom-section {
-				margin-top: clamp(12px, 3vw, 24px);
 			}
 		}
 
@@ -289,8 +286,7 @@
 			}
 
 			.benefits-list {
-				max-width: none;
-				padding: 0 2px;
+				padding: 0;
 			}
 
 			.benefits-list li {
@@ -337,7 +333,8 @@
 
 				<p>Tu sais ce que tu dois faire,</p>
 				<p>
-					Pourtant, te mettre au travail demande toujours plus d’<span class="highlight">énergie</span> que prévu,
+					Pourtant, te mettre au travail demande toujours plus d’<span class="highlight">énergie</span> que
+					prévu,
 				</p>
 				<p>Tu <span class="highlight">procrastines</span>,</p>
 				<p>Tu te disperses,</p>
@@ -347,7 +344,8 @@
 				<h2>Transforme ton espace de travail en un lieu qui soutient ton cerveau au lieu de l’épuiser.</h2>
 
 				<p class="guide-offer">
-					<span class="text-plum">Dans ce guide gratuit de 24 pages</span>, découvre les 5 clés qui t’aideront à y parvenir.
+					<span class="text-plum">Dans ce guide gratuit de 24 pages</span>, découvre les 5 clés qui t’aideront
+					à y parvenir.
 				</p>
 
 				<p>Tu apprendras notamment&nbsp;:</p>
@@ -365,7 +363,16 @@
 					C’est une <span class="highlight">invitation à travailler</span> avec
 					<span class="highlight">plus de douceur, plus de calme</span> et moins de lutte intérieure.
 				</p>
-				<p class="emphasis-plum">Parce qu’un bureau qui te fait du bien peut changer bien plus que ton espace de travail.</p>
+				<p class="emphasis-plum">Parce qu’un bureau qui te fait du bien peut changer bien plus que ton espace de
+					travail.</p>
+
+				<ul class="benefits-list">
+					<li>Moins de bruit mental</li>
+					<li>Moins de procrastination</li>
+					<li>Une concentration plus naturelle</li>
+					<li>Un bureau dans lequel tu as envie de t’installer</li>
+					<li>Plus de calme au quotidien</li>
+				</ul>
 			</div>
 
 			<div class="visual">
@@ -375,14 +382,6 @@
 			</div>
 
 			<section class="bottom-section">
-				<ul class="benefits-list">
-					<li>moins de bruit mental</li>
-					<li>moins de procrastination</li>
-					<li>une concentration plus naturelle</li>
-					<li>un bureau dans lequel tu as envie de t’installer</li>
-					<li>plus de calme au quotidien</li>
-				</ul>
-
 				<p class="final-cta">
 					Commence dès aujourd’hui à créer un bureau qui te fait du bien
 				</p>
@@ -480,7 +479,8 @@
 			}
 		};
 	</script>
-	<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+	<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"
+		type="text/javascript"></script>
 	<script>
 		fetch("https://assets.mailerlite.com/jsonp/1781863/forms/183228626042356840/takel");
 	</script>
