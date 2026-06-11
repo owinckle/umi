@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Quicksand:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap"
 		rel="stylesheet" />
 	<link rel="stylesheet" href="mailerlite-39133676.css" />
 
@@ -23,7 +23,6 @@
 			--bg-cream: #fff9ee;
 			--text: #000000;
 			--plum: #71325f;
-			--rose: #a67c89;
 		}
 
 		* {
@@ -32,64 +31,70 @@
 			box-sizing: border-box;
 		}
 
+		html {
+			overflow-x: clip;
+		}
+
 		body {
 			font-family: "Quicksand", sans-serif;
 			background: var(--bg-cream);
 			color: var(--text);
 			min-height: 100vh;
 			line-height: 1.65;
+			overflow-x: clip;
 		}
 
 		.page {
 			max-width: 1120px;
 			margin: 0 auto;
-			padding: 48px 28px 72px;
+			padding: clamp(32px, 5vw, 48px) clamp(18px, 4vw, 28px) clamp(48px, 8vw, 72px);
 		}
 
 		.page-header {
 			text-align: center;
-			margin-bottom: 48px;
+			margin-bottom: clamp(28px, 5vw, 44px);
 		}
 
 		.page-title {
 			font-family: "Raleway", sans-serif;
-			font-size: 60px;
-			font-weight: 500;
+			font-size: clamp(1.65rem, 4.5vw + 0.5rem, 3.75rem);
+			font-weight: 600;
+			font-style: normal;
 			color: var(--plum);
 			letter-spacing: 0.02em;
+			line-height: 1.15;
 			text-shadow: 0 2px 8px rgba(113, 50, 95, 0.12), 0 1px 2px rgba(113, 50, 95, 0.08);
+			overflow-wrap: break-word;
+			hyphens: auto;
 		}
 
-		.layout {
+		.main-grid {
 			display: grid;
-			grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-			gap: clamp(32px, 5vw, 56px);
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			gap: clamp(28px, 5vw, 52px);
 			align-items: start;
+		}
+
+		.copy,
+		.visual,
+		.bottom-section {
+			min-width: 0;
 		}
 
 		.copy h2,
 		.copy h3 {
 			font-family: "Lora", serif;
-			font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+			font-size: clamp(1.2rem, 2.3vw, 1.48rem);
 			font-style: italic;
 			font-weight: 600;
 			color: var(--text);
 			line-height: 1.45;
+			overflow-wrap: break-word;
+			hyphens: auto;
 		}
 
 		.copy h2 {
-			margin-bottom: 22px;
-		}
-
-		.copy p {
-			font-size: 0.98rem;
-			margin-bottom: 18px;
-			color: var(--text);
-		}
-
-		.copy .highlight {
-			color: var(--plum);
-			font-weight: 500;
+			margin-bottom: 20px;
 		}
 
 		.copy h3 {
@@ -97,56 +102,71 @@
 			margin: 28px 0 16px;
 		}
 
-		.cta-block {
-			font-family: "Lora", serif;
-			text-align: center;
-			margin-top: 36px;
-			margin-bottom: 28px;
+		.copy p,
+		.learn-list li,
+		.benefits-list li {
+			font-family: "Quicksand", sans-serif;
+			font-size: clamp(0.92rem, 2vw, 0.98rem);
 		}
 
-		.cta-block p {
-			font-size: clamp(1rem, 1.8vw, 1.12rem);
-			line-height: 1.55;
-			max-width: 38ch;
-			margin-left: auto;
-			margin-right: auto;
+		.copy p {
+			margin-bottom: 14px;
+			color: var(--text);
+		}
+
+		.copy .highlight {
 			color: var(--plum);
+			font-weight: 600;
 		}
 
-		.lead-form {
-			max-width: 480px;
-			margin: 0 auto;
+		.copy .text-plum {
+			color: var(--plum);
+			font-weight: inherit;
+		}
+
+		.copy .emphasis-plum {
+			color: var(--plum);
+			font-weight: 600;
+		}
+
+		.copy .guide-offer {
+			margin: 20px 0 12px;
+		}
+
+		.learn-list {
+			list-style: none;
+			margin: 0 0 8px;
+			padding: 0;
+		}
+
+		.learn-list li {
+			margin-bottom: 10px;
+			padding-left: 1.6em;
+			position: relative;
+			color: var(--text);
+		}
+
+		.learn-list li::before {
+			content: "✨";
+			position: absolute;
+			left: 0;
+			top: 0;
+			line-height: 1.65;
 		}
 
 		.visual {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			position: relative;
-			min-height: 0;
-		}
-
-		.visual::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			width: min(58%, 220px);
-			pointer-events: none;
-			z-index: 1;
-			background: linear-gradient(
-				to right,
-				rgba(255, 249, 238, 0) 0%,
-				rgba(255, 249, 238, 0.55) 45%,
-				var(--bg-cream) 100%
-			);
+			align-self: center;
+			width: 100%;
+			padding: clamp(16px, 3vw, 32px) 0;
 		}
 
 		.book-wrap {
-			position: relative;
-			z-index: 0;
-			max-width: min(440px, 94vw);
+			width: 100%;
+			max-width: min(520px, 100%);
+			margin: 0 auto;
 		}
 
 		.book-wrap img {
@@ -155,28 +175,152 @@
 			display: block;
 		}
 
+		.bottom-section {
+			grid-column: 1 / -1;
+			margin-top: clamp(20px, 4vw, 36px);
+			text-align: center;
+		}
+
+		.benefits-list {
+			list-style: none;
+			margin: 0 auto clamp(16px, 3vw, 24px);
+			padding: 0;
+			width: 100%;
+			max-width: 28rem;
+		}
+
+		.benefits-list li {
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			gap: 0.45em;
+			margin-bottom: 10px;
+			line-height: 1.45;
+			text-align: center;
+			color: var(--plum);
+			font-weight: 600;
+		}
+
+		.benefits-list li:last-child {
+			margin-bottom: 0;
+		}
+
+		.benefits-list li::before {
+			content: "🫧";
+			flex: 0 0 1.4em;
+			width: 1.4em;
+			text-align: center;
+			line-height: 1.45;
+		}
+
+		.final-cta {
+			font-family: "Raleway", sans-serif;
+			font-size: clamp(0.85rem, 2vw, 1rem);
+			font-weight: 700;
+			font-style: normal;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: var(--plum);
+			line-height: 1.5;
+			max-width: 42rem;
+			margin: 0 auto 12px;
+		}
+
+		.lead-form {
+			width: 100%;
+			max-width: 480px;
+			margin: 0 auto;
+		}
+
+		.guide-ml-form .ml-form-successBody.row-success.is-visible {
+			display: block !important;
+		}
+
 		@media (max-width: 880px) {
-			.layout {
+			.main-grid {
 				grid-template-columns: 1fr;
 			}
 
 			.visual {
 				order: -1;
+				align-self: center;
 				margin-bottom: 8px;
+				padding: clamp(8px, 2vw, 16px) 0;
+			}
+
+			.book-wrap {
+				max-width: min(380px, 82vw);
+			}
+
+			.bottom-section {
+				margin-top: clamp(12px, 3vw, 24px);
 			}
 		}
 
-		@media (max-width: 640px) {
+		@media (max-width: 600px) {
+			.page-header {
+				margin-bottom: clamp(20px, 5vw, 28px);
+			}
+
 			.page-title {
-				font-size: clamp(1.75rem, 7vw, 60px);
+				font-size: clamp(1.45rem, 7vw, 1.85rem);
+				line-height: 1.2;
+			}
+
+			.copy h2 {
+				margin-bottom: 16px;
+				font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+			}
+
+			.copy h3 {
+				margin: 22px 0 12px;
+				font-size: clamp(1.05rem, 4vw, 1.25rem);
+			}
+
+			.copy p,
+			.learn-list li {
+				font-size: 0.92rem;
+			}
+
+			.final-cta {
+				letter-spacing: 0.04em;
+				font-size: clamp(0.78rem, 3.2vw, 0.9rem);
+				padding: 0 2px;
+			}
+
+			.benefits-list {
+				max-width: none;
+				padding: 0 2px;
+			}
+
+			.benefits-list li {
+				font-size: 0.9rem;
+				gap: 0.35em;
+			}
+
+			.lead-form {
+				max-width: none;
+			}
+
+			.book-wrap {
+				max-width: min(300px, 72vw);
 			}
 		}
 
-		@media (max-width: 480px) {
+		@media (max-width: 380px) {
 			.page {
-				padding: 32px 18px 56px;
+				padding-left: 16px;
+				padding-right: 16px;
 			}
 
+			.book-wrap {
+				max-width: min(240px, 78vw);
+			}
+
+			.benefits-list li::before {
+				flex: 0 0 1.2em;
+				width: 1.2em;
+			}
 		}
 	</style>
 </head>
@@ -187,49 +331,61 @@
 			<h1 class="page-title">Le Guide de Recentrage UMI</h1>
 		</header>
 
-		<div class="layout">
+		<div class="main-grid">
 			<div class="copy">
-				<h2>Et si se concentrer redevenait un moment d’apaisement et de plaisir ?</h2>
+				<h2>Et si ton bureau était une des raisons pour lesquelles tu te sens si vite épuisée&nbsp;?</h2>
 
+				<p>Tu sais ce que tu dois faire,</p>
 				<p>
-					Dans ce guide de <span class="highlight">17 pages</span>, découvrez
-					<span class="highlight">les 5 clés</span> pour harmoniser
-					<span class="highlight">les couleurs</span>, <span class="highlight">les senteurs</span> et
-					<span class="highlight">les matières</span> de votre
-					<span class="highlight">espace de travail</span> : un
-					<span class="highlight">cocon propice à la clarté</span> et
-					<span class="highlight">à la créativité</span>.
+					Pourtant, te mettre au travail demande toujours plus d’<span class="highlight">énergie</span> que prévu,
+				</p>
+				<p>Tu <span class="highlight">procrastines</span>,</p>
+				<p>Tu te disperses,</p>
+				<p>Ton cerveau paraît constamment <span class="highlight">saturé</span>,</p>
+				<p>Et si le problème n’était pas ton manque de motivation&nbsp;?</p>
+
+				<h2>Transforme ton espace de travail en un lieu qui soutient ton cerveau au lieu de l’épuiser.</h2>
+
+				<p class="guide-offer">
+					<span class="text-plum">Dans ce guide gratuit de 24 pages</span>, découvre les 5 clés qui t’aideront à y parvenir.
 				</p>
 
-				<p>
-					Des <span class="highlight">anecdotes inspirantes</span>, des
-					<span class="highlight">exercices ludiques</span> et des
-					<span class="highlight">routines simples</span> pour
-					<span class="highlight">canaliser votre énergie</span>,
-					<span class="highlight">éveiller vos sens</span>, et une
-					<span class="highlight">concentration douce</span>, fluide et
-					<span class="highlight">naturelle</span>.
-				</p>
+				<p>Tu apprendras notamment&nbsp;:</p>
+				<ul class="learn-list">
+					<li>Pourquoi ton environnement visuel influence ton cerveau</li>
+					<li>Comment les couleurs influencent ton état mental</li>
+					<li>Pourquoi les routines favorisent la concentration</li>
+					<li>Pourquoi écrire à la main aide à ralentir le mental</li>
+					<li>Pourquoi les senteurs influencent la concentration et le bien-être</li>
+				</ul>
 
-				<h3>Ce n’est pas un simple guide de productivité.</h3>
-
-				<p>
-					C’est <span class="highlight">une invitation à ralentir, à vous recentrer,</span>
-					<span class="highlight">à créer un environnement de travail</span> qui
-					<span class="highlight">vous correspond vraiment</span>.
-				</p>
+				<h3>Ce n’est pas un guide de productivité de plus.</h3>
 
 				<p>
-					<span class="highlight">Un Monde Intérieur</span> vous aide
-					<span class="highlight">à mieux comprendre ce qui se passe en vous, vos besoins, vos émotions, vos sources d’inspiration</span>.
+					C’est une <span class="highlight">invitation à travailler</span> avec
+					<span class="highlight">plus de douceur, plus de calme</span> et moins de lutte intérieure.
 				</p>
+				<p class="emphasis-plum">Parce qu’un bureau qui te fait du bien peut changer bien plus que ton espace de travail.</p>
+			</div>
 
-				<div class="cta-block">
-					<p>
-						Téléchargez votre ebook gratuit et commencez à transformer vos moments de
-						travail en véritables instants de présence et d’harmonie.
-					</p>
+			<div class="visual">
+				<div class="book-wrap">
+					<img src="guide.png" alt="Couverture du Guide de Recentrage UMI" width="779" height="952" />
 				</div>
+			</div>
+
+			<section class="bottom-section">
+				<ul class="benefits-list">
+					<li>moins de bruit mental</li>
+					<li>moins de procrastination</li>
+					<li>une concentration plus naturelle</li>
+					<li>un bureau dans lequel tu as envie de t’installer</li>
+					<li>plus de calme au quotidien</li>
+				</ul>
+
+				<p class="final-cta">
+					Commence dès aujourd’hui à créer un bureau qui te fait du bien
+				</p>
 
 				<div class="lead-form guide-ml-form">
 					<div id="mlb2-39133676" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39133676">
@@ -242,7 +398,6 @@
 										action="https://assets.mailerlite.com/jsonp/1781863/forms/183228626042356840/subscribe"
 										data-code=""
 										method="post"
-										target="_blank"
 									>
 										<div class="ml-form-formContent">
 											<div class="ml-form-fieldRow ml-last-item">
@@ -271,34 +426,59 @@
 										<input type="hidden" name="anticsrf" value="true" />
 									</form>
 								</div>
-								<div class="ml-form-successBody row-success" style="display: none">
+								<div class="ml-form-successBody row-success" hidden aria-live="polite">
 									<div class="ml-form-successContent">
 										<h4>Merci !</h4>
-										<p>Vous allez recevoir votre guide par e-mail dans quelques minutes.</p>
-										<p>(Pensez à vérifier l’onglet &quot;Promotions&quot;)</p>
+										<p>Tu vas recevoir ton guide par e-mail dans quelques minutes.</p>
+										<p>(Pense à vérifier l’onglet &quot;Promotions&quot;)</p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="visual">
-				<div class="book-wrap">
-					<img src="guide.png" alt="Couverture du Guide de Recentrage UMI" width="779" height="952" />
-				</div>
-			</div>
+			</section>
 		</div>
 	</div>
 
 	<script>
-		function ml_webform_success_39133676() {
-			var $ = ml_jQuery || jQuery;
-			$(".ml-subscribe-form-39133676 .row-success").show();
-			$(".ml-subscribe-form-39133676 .row-form").hide();
+		function showGuideThankYou() {
+			var container = document.querySelector(".ml-subscribe-form-39133676");
+			if (!container) return;
+
+			var formRow = container.querySelector(".row-form");
+			var successRow = container.querySelector(".row-success");
+			var finalCta = document.querySelector(".final-cta");
+
+			if (formRow) {
+				formRow.style.display = "none";
+				formRow.setAttribute("aria-hidden", "true");
+			}
+
+			if (successRow) {
+				successRow.hidden = false;
+				successRow.classList.add("is-visible");
+				successRow.style.display = "block";
+				successRow.setAttribute("aria-hidden", "false");
+				successRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
+			}
+
+			if (finalCta) {
+				finalCta.style.display = "none";
+			}
+
 			if (window.plausible) plausible("Guide Ebook Lead");
 		}
+
+		window.ml_webform_success_39133676 = function () {
+			showGuideThankYou();
+
+			var $ = window.ml_jQuery || window.jQuery;
+			if ($) {
+				$(".ml-subscribe-form-39133676 .row-success").show();
+				$(".ml-subscribe-form-39133676 .row-form").hide();
+			}
+		};
 	</script>
 	<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
 	<script>
